@@ -39,4 +39,4 @@ def languages(request):
                 language_lst.append(i)
                 out += f'<li>{i}</li>'
     out += '</ol>'
-    return HttpResponse(out )
+    return HttpResponse(out)
