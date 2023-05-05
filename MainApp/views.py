@@ -18,25 +18,21 @@ def countries_list(request):
 
 
 def country_page(request, country):
-    for item in lst:
-        if item['country'] == country:
-            text = f"""
-                <h1>{item['country']}</h1>
-            """
-            text += '<ul>'
-            for i in item['languages']:
-                text += f'<li>{i}</li>'
-            text += '</ul>'
-            return HttpResponse(text)
+    context = {
+        'lst': lst,
+        'country': country
+    }
+    return render(request, 'country_page.html', context)
 
 
 def languages(request):
     language_lst = []
-    out = '<ol>'
     for item in lst:
         for i in item['languages']:
             if i not in language_lst:
                 language_lst.append(i)
-                out += f'<li>{i}</li>'
-    out += '</ol>'
-    return HttpResponse(out)
+    context = {
+        'language_lst': language_lst
+    }
+    return render(request, 'languages_list.html', context)
+

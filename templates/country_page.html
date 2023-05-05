@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    {% for c in lst %}
+        {% if c.country == country %}
+            <title>Страница страны {{c.country}}</title>
+            <h1>{{c.country}}</h1>
+            <ul>
+            {% for i in c.languages %}
+                <li>{{i}}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
