@@ -1,3 +1,22 @@
+Инструкция по запуску проекта DjangoCountries:
+
+## Перейдите в папку проекта:
+```
+cd ~/Projects/DjangoCountries/
+```
+
+## Активируйте виртуальную среду:
+```
+source countries_venv/bin/activate
+```
+
+## Запустите сервер разработки:
+```
+python manage.py runserver
+```
+
+## Перейдите по адресу http://127.0.0.1:8000/ в браузере.
+
 
 
 ### Часть-1
