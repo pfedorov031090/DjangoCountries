@@ -1,9 +1,5 @@
 from django.shortcuts import render, HttpResponse
-import json
-
-
-with open('countries.json') as f:
-    lst = json.load(f)
+from MainApp.models import Country, Languages
 
 
 def home(request):
@@ -11,6 +7,7 @@ def home(request):
 
 
 def countries_list(request):
+    lst = Country.objects.all()
     context = {
         'lst': lst
     }
@@ -18,21 +15,19 @@ def countries_list(request):
 
 
 def country_page(request, country):
+    country1 = Country.objects.get(name=country)
+    lst = country1.languages.all()
     context = {
         'lst': lst,
-        'country': country
+        'country': country1.name
     }
     return render(request, 'country_page.html', context)
 
 
 def languages(request):
-    language_lst = []
-    for item in lst:
-        for i in item['languages']:
-            if i not in language_lst:
-                language_lst.append(i)
+    lst = Languages.objects.all()
     context = {
-        'language_lst': language_lst
+        'language_lst': lst
     }
     return render(request, 'languages_list.html', context)
 

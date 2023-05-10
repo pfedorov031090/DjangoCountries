@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
 </head>
 <body>
+    <title>Страница страны {{country}}</title>
+        <h1>{{country}}</h1>
+    <ul>
     {% for c in lst %}
-        {% if c.country == country %}
-            <title>Страница страны {{c.country}}</title>
-            <h1>{{c.country}}</h1>
-            <ul>
-            {% for i in c.languages %}
-                <li>{{i}}</li>
-            {% endfor %}
-            </ul>
-        {% endif %}
+        <li>{{c.language}}</li>
     {% endfor %}
+    </ul>
 </body>
 </html>
