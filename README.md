@@ -10,6 +10,11 @@ cd ~/Projects/DjangoCountries/
 source countries_venv/bin/activate
 ```
 
+## Установите Django:
+```
+pip install django
+```
+
 ## Запустите сервер разработки:
 ```
 python manage.py runserver
