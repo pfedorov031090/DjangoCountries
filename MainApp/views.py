@@ -7,6 +7,7 @@ def home(request):
 
 
 def countries_list(request):
+    # FIXME: очень плохое именование переменных. Подберите более информативные имена.
     lst = Country.objects.all()
     context = {
         'lst': lst
@@ -15,6 +16,7 @@ def countries_list(request):
 
 
 def country_page(request, country):
+    # FIXME: очень плохое именование переменных. Подберите более информативные имена.
     country1 = Country.objects.get(name=country)
     lst = country1.languages.all()
     context = {
@@ -25,6 +27,7 @@ def country_page(request, country):
 
 
 def languages(request):
+    # FIXME: очень плохое именование переменных. Подберите более информативные имена.
     lst = Languages.objects.all()
     context = {
         'language_lst': lst
