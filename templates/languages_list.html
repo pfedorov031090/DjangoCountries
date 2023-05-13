@@ -7,8 +7,8 @@
 <body>
     <ol>
     {# FIXME: очень плохое именование переменных. Подберите более информативные имена.  #}
-    {% for c in language_lst %}
-        <li>{{c.language}}</li>
+    {% for language in language_list %}
+        <li>{{language.language_name}}</li>
     {% endfor %}
     </ol>
 </body>

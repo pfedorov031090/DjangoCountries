@@ -5,9 +5,8 @@
     <title>Список стран</title>
     <body>
     <ol>
-        {# FIXME: очень плохое именование переменных. Подберите более информативные имена.   #}
-        {% for c in lst %}
-            <li><a href="{{c.name}}">{{c.name}}</a></li>
+        {% for country in countries_list %}
+            <li><a href="{{country.name}}">{{country.name}}</a></li>
         {% endfor %}
     </ol>
 </head>

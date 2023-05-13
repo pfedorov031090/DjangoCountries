@@ -1,5 +1,5 @@
-from django.shortcuts import render, HttpResponse
-from MainApp.models import Country, Languages
+from django.shortcuts import render
+from MainApp.models import Country, Language
 
 
 def home(request):
@@ -7,30 +7,27 @@ def home(request):
 
 
 def countries_list(request):
-    # FIXME: очень плохое именование переменных. Подберите более информативные имена.
-    lst = Country.objects.all()
+    countries_list_from_bd = Country.objects.all()
     context = {
-        'lst': lst
+        'countries_list': countries_list_from_bd
     }
     return render(request, 'countries_list.html', context)
 
 
 def country_page(request, country):
-    # FIXME: очень плохое именование переменных. Подберите более информативные имена.
-    country1 = Country.objects.get(name=country)
-    lst = country1.languages.all()
+    country_from_bd = Country.objects.get(name=country)
+    language_list_from_bd = country_from_bd.languages.all()
     context = {
-        'lst': lst,
-        'country': country1.name
+        'language_list': language_list_from_bd,
+        'country': country_from_bd.name
     }
     return render(request, 'country_page.html', context)
 
 
 def languages(request):
-    # FIXME: очень плохое именование переменных. Подберите более информативные имена.
-    lst = Languages.objects.all()
+    language_list_from_bd = Language.objects.all()
     context = {
-        'language_lst': lst
+        'language_list': language_list_from_bd
     }
     return render(request, 'languages_list.html', context)
 
