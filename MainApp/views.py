@@ -33,7 +33,7 @@ def language_page(request, language):
     return render(request, 'language_page.html', context)
 
 
-def languages(request):
+def languages_list(request):
     language_list_from_bd = Language.objects.all()
     context = {
         'language_list': language_list_from_bd

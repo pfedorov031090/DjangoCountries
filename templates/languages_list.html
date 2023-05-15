@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Список языков</title>
-</head>
+{% extends 'base.html' %}
+
+{% block text %}
+<title>Список языков</title>
 <body>
     <ol>
-    {# FIXME: очень плохое именование переменных. Подберите более информативные имена.  #}
     {% for language in language_list %}
         <li><a href="{{language.language_name}}">{{language.language_name}}</a></li>
     {% endfor %}
     </ol>
-</body>
-</html>
+{% endblock %}

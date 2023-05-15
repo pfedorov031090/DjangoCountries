@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+{% extends 'base.html' %}
+
+{% block text %}
+<title>Домашняя работа Федорова П.А.</title>
 <body>
     <h1>Домашняя работа</h1>
     <strong>Федоров П.А.</strong><br><br>
-    <a href="/countries-list/">Список стран</a><br>
-    <a href="/languages/">Языки</a>
-
-</body>
-</html>
+    <a href="{% url 'countries_list'%}">Список стран</a><br>
+    <a href="{% url 'languages_list'%}">Языки</a>
+{% endblock %}

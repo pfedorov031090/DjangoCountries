@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-</head>
+{% extends 'base.html' %}
+
+{% block text %}
+<title>Страница языка {{language}}</title>
 <body>
-    <title>Страница языка {{language}}</title>
         <h1>{{language}}</h1>
     <ul>
     {% for country in countries_list %}
         <li>{{country.name}}</li>
     {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

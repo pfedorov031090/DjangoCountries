@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Список стран</title>
-    <body>
+{% extends 'base.html' %}
+
+{% block text %}
+<title>Список стран</title>
+<body>
     <ol>
         {% for country in countries_list %}
             <li><a href="{{country.name}}">{{country.name}}</a></li>
         {% endfor %}
     </ol>
-</head>
-</body>
-</html>
+{% endblock %}
