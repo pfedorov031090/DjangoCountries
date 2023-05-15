@@ -8,4 +8,5 @@ urlpatterns = [
     path('countries-list/', views.countries_list),
     path('countries-list/<country>/', views.country_page),
     path('languages/', views.languages),
+    path('languages/<language>/', views.language_page),
 ]
