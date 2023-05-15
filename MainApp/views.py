@@ -25,9 +25,9 @@ def country_page(request, country):
 
 
 def language_page(request, language):
-    countries_list_from_bd = Country.objects.filter(languages__language_name=language)
+    countries_by_language = Country.objects.filter(languages__language_name=language)
     context = {
-        'countries_list': countries_list_from_bd,
+        'countries_list': countries_by_language,
         'language': language
     }
     return render(request, 'language_page.html', context)
