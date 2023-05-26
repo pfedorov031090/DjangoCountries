@@ -6,7 +6,7 @@ from MainApp import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('countries-list/', views.countries_list, name='countries'),
-    path('countries-list/<country>/', views.country_page, name='country_page'),
+    path('countries-list/<int:country_id>/', views.country_page, name='country_page'),
     path('languages/', views.languages_list, name='languages'),
-    path('languages/<language>/', views.language_page, name='language_page'),
+    path('languages/<int:language_id>/', views.language_page, name='language_page'),
 ]
